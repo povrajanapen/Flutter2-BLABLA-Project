@@ -29,6 +29,7 @@ class BlaButton extends StatelessWidget {
     final borderColor = isPrimary ? BorderSide.none : BorderSide(color: BlaColors.greyLight, width: 2);
     final iconColor = isPrimary ? BlaColors.white : BlaColors.primary;
 
+
     // - create a button
     return ElevatedButton(
       onPressed: onPressed,
@@ -49,7 +50,7 @@ class BlaButton extends StatelessWidget {
               Icon(icon, size: 20, color: iconColor),
               SizedBox(width: BlaSpacings.s),
             ],
-          // - create button text
+           // - create button text
             Text(text, style: BlaTextStyles.button.copyWith(color: textColor)),
           ],
         ),
