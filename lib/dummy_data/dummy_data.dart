@@ -7,7 +7,7 @@ import 'dart:math';
 final Random random = Random();
 
 ///
-/// FACE DATA FOR TEST PURPOSE
+/// FACE DATA FOR TEST PURPOSES
 ///
 
 // Fake Cities

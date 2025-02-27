@@ -5,6 +5,7 @@ import '../dummy_data/dummy_data.dart';
 ////
 ///   This service handles:
 ///   - The list of available rides
+/// 
 ///
 class LocationsService {
 

@@ -45,10 +45,10 @@ class BlaButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (icon != null)
+            if (icon != null)...[      
               Icon(icon, size: 20, color: iconColor),
               SizedBox(width: BlaSpacings.s),
-
+            ],
           // - create button text
             Text(text, style: BlaTextStyles.button.copyWith(color: textColor)),
           ],

@@ -13,6 +13,7 @@ class RidesService {
 
 
   ///
+  ///
   ///  Return the relevant rides, given the passenger preferences
   ///
   static List<Ride> getRidesFor(RidePref preferences) {

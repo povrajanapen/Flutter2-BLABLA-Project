@@ -16,6 +16,5 @@ class MyApp extends StatelessWidget {
       theme: appTheme,
       home: Scaffold(body: RidePrefScreen()),
     );
-    
   }
 }

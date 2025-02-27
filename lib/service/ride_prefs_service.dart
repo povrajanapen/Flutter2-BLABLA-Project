@@ -10,6 +10,7 @@ import '../model/ride_pref/ride_pref.dart';
 class RidePrefService {
 
   ///
+  ///
   /// List of past entered ride prefs. LIFO (most recents first)
   ///
   static List<RidePref> ridePrefsHistory = fakeRidePrefs;   // TODO for now fake data

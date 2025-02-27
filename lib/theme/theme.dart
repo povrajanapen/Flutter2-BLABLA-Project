@@ -55,8 +55,6 @@ class BlaTextStyles {
   static TextStyle button =  TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
 }
 
-
-
 ///
 /// Definition of App spacings, in pixels.
 /// Bascially small (S), medium (m), large (l), extra large (x), extra extra large (xxl)
