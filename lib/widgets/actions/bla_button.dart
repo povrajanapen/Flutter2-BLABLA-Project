@@ -30,6 +30,24 @@ class BlaButton extends StatelessWidget {
     final iconColor = isPrimary ? BlaColors.white : BlaColors.primary;
 
 
+    // - create a button icon if has any
+    Widget buildButtonChild(Color iconColor, IconData? icon, String text, Color textColor) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (icon != null)
+            Icon(
+              icon,
+              size: 20,
+              color: iconColor,
+            ),
+          if (icon != null) SizedBox(width: BlaSpacings.s), // - add spacing only if the icon exists
+            // - create button text
+            Text(text, style: BlaTextStyles.button.copyWith(color: textColor)),
+        ],
+      );
+    }
+
     // - create a button
     return ElevatedButton(
       onPressed: onPressed,
@@ -42,18 +60,7 @@ class BlaButton extends StatelessWidget {
           side: borderColor,
         ),
       ), 
-        // - create a button icon if has any
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (icon != null)...[      
-              Icon(icon, size: 20, color: iconColor),
-              SizedBox(width: BlaSpacings.s),
-            ],
-           // - create button text
-            Text(text, style: BlaTextStyles.button.copyWith(color: textColor)),
-          ],
-        ),
+        child: buildButtonChild(iconColor, icon, text, textColor)
       );
   }
 }
