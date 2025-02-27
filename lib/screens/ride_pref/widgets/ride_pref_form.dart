@@ -66,7 +66,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onDepartureSelected() async {
     // - Navigate to the location selection screen
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-      MaterialPageRoute(builder: (context) => BlaLocationPicker()),
+      MaterialPageRoute(builder: (context) => BlaLocationPicker(initialLocation: departure,)),
     );
 
     // - Update the state with the selected location
@@ -81,7 +81,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onArrivalSelected() async {
     // - Navigate to the location selection screen
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-      MaterialPageRoute(builder: (context) => BlaLocationPicker()),
+      MaterialPageRoute(builder: (context) => BlaLocationPicker(initialLocation: arrival,)),
     );
    
     setState(() {
@@ -138,6 +138,9 @@ class _RidePrefFormState extends State<RidePrefForm> {
   String get requestedSeatsNumber => requestedSeats.toString();
 
   bool isSwitchEnabled() => departure != null && arrival != null;
+  bool get showDepartureInput => departure != null; 
+  bool get showArrivalInput => arrival != null;
+
 
   // ----------------------------------
   // Build the widgets
@@ -158,6 +161,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
               iconLeft: Icons.location_on,
               iconRight: isSwitchEnabled()? Icons.swap_vert : null,
               onRightIconTap: isSwitchEnabled()? onSwitchLocations : null,
+              isSelected: showDepartureInput,
               onPressed: onDepartureSelected,
             ),
             const BlaDivider(),
@@ -166,6 +170,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
             RidePrefTile(
               title: arrivalName,
               iconLeft: Icons.location_on,
+              isSelected: showArrivalInput,
               onPressed: onArrivalSelected,
               ),
             const BlaDivider(),
