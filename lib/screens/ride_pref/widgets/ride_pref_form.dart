@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:week_3_blabla_project/screens/ride_pref/widgets/ride_pref_tile.dart';
 import 'package:week_3_blabla_project/screens/rides/rides_screen.dart';
 import 'package:week_3_blabla_project/theme/theme.dart';
+import 'package:week_3_blabla_project/utils/animations_util.dart';
 import 'package:week_3_blabla_project/utils/date_time_util.dart';
 import 'package:week_3_blabla_project/widgets/actions/bla_button.dart';
 import 'package:week_3_blabla_project/widgets/display/bla_divider.dart';
@@ -66,7 +67,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onDepartureSelected() async {
     // - Navigate to the location selection screen
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-      MaterialPageRoute(builder: (context) => BlaLocationPicker(initialLocation: departure,)),
+      AnimationUtils.createBottomToTopRoute(BlaLocationPicker(initialLocation: departure,)),
     );
 
     // - Update the state with the selected location
@@ -81,7 +82,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onArrivalSelected() async {
     // - Navigate to the location selection screen
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-      MaterialPageRoute(builder: (context) => BlaLocationPicker(initialLocation: arrival,)),
+      AnimationUtils.createBottomToTopRoute(BlaLocationPicker(initialLocation: arrival,)),
     );
    
     setState(() {
@@ -116,7 +117,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
 
     // - Navigate to the rides screen
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => RidesScreen(initialRidePref: newRidePref)),
+      AnimationUtils.createBottomToTopRoute(RidesScreen(initialRidePref: newRidePref)),
     );
     }
   }
