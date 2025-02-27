@@ -3,7 +3,7 @@ import '../ride/locations.dart';
 ///
 /// This model describes a ride preference.
 /// A ride preference consists of the selection of a departure + arrival + a date and a number of passenger
-///
+////
 class RidePref {
   final Location departure;
   final DateTime departureDate;

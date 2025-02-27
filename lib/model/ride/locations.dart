@@ -13,7 +13,7 @@ enum Country {
 
 ///
 /// This model describes a location (city, street).
-///
+////
 class Location {
   final String name;
   final Country country;
