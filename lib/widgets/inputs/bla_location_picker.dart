@@ -21,6 +21,8 @@ class _BlaLocationPickerState extends State<BlaLocationPicker> {
   List<Location> filteredLocation = [];
   List<Location> allLocations = [];
 
+  // initialize the Form attributes
+
   @override
   void initState() {
     super.initState();
@@ -80,7 +82,7 @@ class _BlaLocationPickerState extends State<BlaLocationPicker> {
 }
 
 //
-// A list of locations display when input is focused
+// A list of locations display when input is focused 
 //
 
 class BlaLocationList extends StatelessWidget {
@@ -149,6 +151,8 @@ class _BlaSearchState extends State<BlaSearch> {
               controller: _controller,
               decoration: const InputDecoration(
                 hintText: 'Search location',
+                border: InputBorder.none,
+                filled: false,
               ),
               onChanged: widget.onSearch,
             ),
