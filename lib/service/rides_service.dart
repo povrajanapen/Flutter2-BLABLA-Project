@@ -1,5 +1,4 @@
 import 'package:week_3_blabla_project/model/ride_pref/ride_pref.dart';
-import 'package:week_3_blabla_project/repository/locations_repository.dart';
 import 'package:week_3_blabla_project/repository/mock/mock_rides_repository.dart';
 import 'package:week_3_blabla_project/repository/rides_repository.dart';
 import '../dummy_data/dummy_data.dart';
