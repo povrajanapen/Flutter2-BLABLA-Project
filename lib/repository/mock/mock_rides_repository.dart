@@ -25,6 +25,8 @@ class MockRidesRepository extends RidesRepository{
       ),
       availableSeats: 2,
       pricePerSeat: 10.0,
+      acceptPet: false,
+
     );
 
      ride2 = Ride(
@@ -42,6 +44,7 @@ class MockRidesRepository extends RidesRepository{
       ),
       availableSeats: 0,
       pricePerSeat: 10.0,
+      acceptPet: false,
     );
 
     ride3 = Ride(
@@ -59,6 +62,7 @@ class MockRidesRepository extends RidesRepository{
       ),
       availableSeats: 1,
       pricePerSeat: 10.0,
+      acceptPet: true,
     );
 
     ride4 = Ride(
@@ -76,6 +80,7 @@ class MockRidesRepository extends RidesRepository{
       ),
       availableSeats: 2,
       pricePerSeat: 10.0,
+      acceptPet: false,
     );
 
     ride5 = Ride(
@@ -93,11 +98,19 @@ class MockRidesRepository extends RidesRepository{
       ),
       availableSeats: 1,
       pricePerSeat: 10.0,
+      acceptPet: false,
     );
   }
 
   @override
-  List<Ride> getRides(RidePreference preference, RidesFilter? filter){
-    return [ride1, ride2, ride3, ride4, ride5];
+  List<Ride> getRides(RidePreference preference, RidesFilter? filter) {
+    List<Ride> rides = [ride1, ride2, ride3, ride4, ride5];
+    return rides.where((ride) =>
+       ride.departureLocation.name == preference.departure.name &&
+          ride.arrivalLocation.name == preference.arrival.name &&
+          ride.departureDate.isAfter(preference.departureDate)
+          && ride.availableSeats >= preference.requestedSeats
+          && (filter == null || filter.acceptPet == ride.filter?.acceptPet)
+    ).toList();
   }
 }

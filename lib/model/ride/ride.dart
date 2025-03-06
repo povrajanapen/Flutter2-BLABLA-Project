@@ -40,7 +40,7 @@ class Ride {
     required this.driver,
     required this.availableSeats,
     required this.pricePerSeat,
-    this.filter,
+    this.filter, required bool acceptPet,
   });
 
   void addPassenger(User passenger) {
