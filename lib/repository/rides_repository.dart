@@ -5,6 +5,4 @@ import 'package:week_3_blabla_project/service/rides_service.dart';
 abstract class RidesRepository {
 
   List<Ride> getRides(RidePreference preference, RidesFilter? filter);
-
-  where(bool Function(dynamic ride) param0) {}
 }
