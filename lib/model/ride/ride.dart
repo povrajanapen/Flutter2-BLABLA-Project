@@ -12,7 +12,7 @@ enum RideStatus {
 
 ///
 /// This model describes a  Ride.
-////
+///
 class Ride {
   final Location departureLocation;
   final DateTime departureDate;

@@ -1,6 +1,6 @@
 ///
 /// This model describes a  BlaBlaCar user.
-////
+///
 class User {
   final String firstName;
   final String lastName;
